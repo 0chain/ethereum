@@ -1,17 +1,14 @@
-# Blueprint Truffle Box
+# 0chain Truffle Box
+Truffle integration for building decentralized applications with 0chain's dStorage protocol. 
 
-This box comes with everything you need to create your own Truffle Box.
+## Prerequisites
+1. Setup [gosdk](https://github.com/0chain/gosdk/)
+2. Setup [zboxcli](https://github.com/0chain/zboxcli) and [zwallet](https://github.com/0chain/zwalletcli)
+3. Install [golang](https://golang.org/doc/install)
+4. Install [truffle](https://www.npmjs.com/package/truffle) globally.
 
-## Getting Started
+#### Questions
+For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
 
-After adding your libraries and code:
-
-1. Delete `box-img-sm.png` and `box-img-lg.png`.
-
-2. Use `box-img-sm-template.png` and `box-img-lg-template.png` to create your own art.
-
-3. Delete the template images and replace them with your art. Be sure your art's filenames don't have -template in them.
-
-4. Customize the box configuration file (`truffle-box.json`) if necessary.
-
-See [the Truffle Box section of our documentation](https://truffleframework.com/docs/truffle/advanced/creating-a-truffle-box/) for more info.
+##### Tests
+Smart contract tested with [MythX](https://mythx.io/)
