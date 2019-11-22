@@ -6,9 +6,14 @@ Truffle integration for building decentralized applications with 0chain's dStora
 2. Setup [zboxcli](https://github.com/0chain/zboxcli) and [zwallet](https://github.com/0chain/zwalletcli)
 3. Install [golang](https://golang.org/doc/install)
 4. Install [truffle](https://www.npmjs.com/package/truffle) globally.
+5. Make
+6. Git
 
 #### Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
 
-##### Tests
-Smart contract tested with [MythX](https://mythx.io/)
+#### Tests
+Smart contract tested with [MythX](https://mythx.io/).
+
+#### Author
+[Jenil K. Thakker](http://github.com/jenil04).

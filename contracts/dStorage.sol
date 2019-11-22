@@ -2,18 +2,16 @@ pragma solidity ^0.5.0;
 
 contract dStorage {
   address public blobber;
-  address public OracleAddress;
 
-  constructor (address _OracleAddress) public {
-    OracleAddress = _OracleAddress;
+  constructor () public {
+    blobber = msg.sender;
   }
 
-  event fileUpload (string authTicket);
+  event fileUpload (string authTicket, string documentHash, string lookupHash);
 
-  function uploadFile(string memory _authTicket)
+  function uploadFile(string memory _authTicket, string memory _documentHash, string memory _lookupHash)
   public
   {
-    require(msg.sender == blobber);
-    emit fileUpload (_authTicket);
+    emit fileUpload (_authTicket, _documentHash, _lookupHash);
   }
 }
