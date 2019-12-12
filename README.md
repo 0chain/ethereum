@@ -9,6 +9,10 @@ Truffle integration for building decentralized applications with 0chain's dStora
 5. Make
 6. Git
 
+### Running Smart Contracts
+- Before running, add you ethereum contract address in dStorage.js and private key in app.js. 
+- `npm start`
+
 #### Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
 
