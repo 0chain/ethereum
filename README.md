@@ -11,6 +11,9 @@ Truffle integration for building decentralized applications with 0chain's dStora
 
 ### Running Smart Contracts
 - Before running, add you ethereum contract address in dStorage.js and private key in app.js. 
+- Deploy contract on Remix IDE.
+- Commit function in zboxcli (--commit flag). Commits to 0chain blockchain and generates metadata. Store it in output.txt.
+- Upload file transaction metadata (found in output.txt) on [Remix IDE](remix.ethereum.org).
 - `npm start`
 
 #### Questions
@@ -20,4 +23,5 @@ For any questions regarding this repository open an issue [here](https://github.
 Smart contract tested with [MythX](https://mythx.io/).
 
 #### Author
-[Jenil K. Thakker](http://github.com/jenil04).
+[Jenil K. Thakker](http://github.com/jenil04)
+
