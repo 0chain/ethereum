@@ -2,6 +2,7 @@ import web3 from "./web3";
 import dstr from "./dStorage";
 var fs = require('fs');
 import output from "./out/output.txt";
+import KEYS from "./config";
 
 try {
     var data = fs.readFileSync('output.txt', 'utf8');
@@ -25,7 +26,7 @@ const tx = new ethTx(txParams);
 const privKey = Buffer.from('', 'hex');
 
 // Transaction is signed
-tx.sign(privKey);
+tx.sign(KEYS.PRIVATE_KEY);
 const serializedTx = tx.serialize();
 const rawTx = '0x' + serializedTx.toString('hex');
 console.log(rawTx)

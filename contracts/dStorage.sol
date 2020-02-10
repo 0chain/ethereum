@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
 contract dStorage {
-  address public blobber;
+  address public client; // the client for the dStorage protocol
 
   constructor () public {
-    blobber = msg.sender;
+    client = msg.sender;
   }
 
   event fileUpload (string authTicket, string documentHash, string lookupHash);

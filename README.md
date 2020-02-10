@@ -6,15 +6,16 @@ Truffle integration for building decentralized applications with 0chain's dStora
 2. Setup [zboxcli](https://github.com/0chain/zboxcli) and [zwallet](https://github.com/0chain/zwalletcli)
 3. Install [golang](https://golang.org/doc/install)
 4. Install [truffle](https://www.npmjs.com/package/truffle) globally.
-5. Make
-6. Git
+5. Install Make & Git.
+6. Install [Metamask](https://metamask.io/) for your browser.
 
-### Running Smart Contracts
-- Before running, add you ethereum contract address in dStorage.js and private key in app.js. 
-- Deploy contract on Remix IDE.
-- Commit function in zboxcli (--commit flag). Commits to 0chain blockchain and generates metadata. Store it in output.txt.
-- Upload file transaction metadata (found in output.txt) on [Remix IDE](remix.ethereum.org).
-- `npm start`
+### Running the App
+- Clone this repository and run  - `npm install`
+- Before running, add your private key and ethereum wallet address from metamask to `config.js` file. 
+- Deploy contract on Remix IDE and add the deployed contract address to `config.js` file.
+- Run the commit function in zboxcli (--commit flag) which commits to the 0chain blockchain and generates the metadata. 
+- Store the resultant metadata in an `output.txt` file and store the file under the `out` folder in this repository.
+- Run `npm start` or Upload file transaction metadata (found in output.txt) on [Remix IDE](http://remix.ethereum.org/).
 
 #### Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
