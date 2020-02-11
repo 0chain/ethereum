@@ -1,13 +1,17 @@
 const KEYS = {
-    PRIVATE_KEY: 'D4F7FD1D05C25FAE9114A4BD3AF73F6E8B635364E71BCD933520D8FBF592B323',
-    ETH_ADDRESS: '0x99dE7B407C4d26909527001e2556Aa5D159F316d',
-    CONTRACT_ADDRESS: 0xe8647ba6e24ed5fbab9ef70db19e2d39e8354e90
+    PRIVATE_KEY: '',
+    PUBLIC_KEY: '',
+    CONTRACT_ADDRESS: '0xe8647ba6e24ed5fbab9ef70db19e2d39e8354e90'
 }
 
+// Encryption and reEncryption keys are optional when files are uploaded with --encrypt and shared 
+// to a specific user, with their encryption key.
 const ZBOX_METADATA = {
-    authTicket: "",
-    documentHash: "", 
-    lookupHash: ""
+    fileName: '',
+    documentHash: '', 
+    lookupHash: '',
+    encyptionKey: '',
+    reEncryptionKey: '' 
 }
 
 module.exports = { KEYS, ZBOX_METADATA };
