@@ -1,5 +1,5 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-import KEYS from "./config";
+var KEYS = require("./config");
 
 
 module.exports = {

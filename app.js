@@ -1,27 +1,94 @@
-import web3 from "./web3";
-import dstr from "./dStorage";
-import { KEYS, ZBOX_METADATA } from "./config";
+var Web3 = require('web3');
+var util = require('ethereumjs-util');
+var tx = require('ethereumjs-tx');
+var lightwallet = require('eth-lightwallet');
+var txutils = lightwallet.txutils;
+var web3 = new Web3(
+    new Web3.providers.HttpProvider('https://ropsten.infura.io/')
+);
+var KEYS = require('./config.js')
+var address = KEYS.ETH_ADDRESS;
+var key = KEYS.PRIVATE_KEY;
+var bytecode = "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061046a806100606000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063109e94cf1461005157806392bb481a146100a8575b600080fd5b34801561005d57600080fd5b5061006661029e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100b457600080fd5b5061029c600480360360608110156100cb57600080fd5b81019080803590602001906401000000008111156100e857600080fd5b8201836020820111156100fa57600080fd5b8035906020019184600183028401116401000000008311171561011c57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561017f57600080fd5b82018360208201111561019157600080fd5b803590602001918460018302840111640100000000831117156101b357600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561021657600080fd5b82018360208201111561022857600080fd5b8035906020019184600183028401116401000000008311171561024a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506102c3565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b7fe4f9b81944e8039c6b058c79508918a7038d39f0a4cd0477db5a512a8902df4183838360405180806020018060200180602001848103845287818151815260200191508051906020019080838360005b8381101561032f578082015181840152602081019050610314565b50505050905090810190601f16801561035c5780820380516001836020036101000a031916815260200191505b50848103835286818151815260200191508051906020019080838360005b8381101561039557808201518184015260208101905061037a565b50505050905090810190601f1680156103c25780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b838110156103fb5780820151818401526020810190506103e0565b50505050905090810190601f1680156104285780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390a150505056fea165627a7a723058205ff9cbc83636ed5e2a9c369c222d8d93732cb27cc0df7bae0d207fd2ef99a4210029";
+var interface = [
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "client",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "authTicket",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "documentHash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "lookupHash",
+        "type": "string"
+      }
+    ],
+    "name": "fileUpload",
+    "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_authTicket",
+        "type": "string"
+      },
+      {
+        "name": "_documentHash",
+        "type": "string"
+      },
+      {
+        "name": "_lookupHash",
+        "type": "string"
+      }
+    ],
+    "name": "uploadFile",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+];
 
 
-const data = ZBOX_METADATA;
-const ethTx = require('ethereumjs-tx');
-
-const txParams = {
-  nonce: '0x6', // Replace by nonce for your account on geth node
-  gasPrice: '0x09184e72a000', 
-  gasLimit: '0x30000',
-  to: '', 
-  value: data
-};
-
-// Transaction is created
-const tx = new ethTx(txParams);
-const privKey = Buffer.from('', 'hex');
-
-// Transaction is signed
-tx.sign(KEYS.PRIVATE_KEY);
-const serializedTx = tx.serialize();
-const rawTx = '0x' + serializedTx.toString('hex');
-console.log(rawTx)
-
-eth.sendRawTransaction(rawTx);
+function sendRaw(rawTx) {
+    var privateKey = new Buffer(key, 'hex');
+    var transaction = new tx(rawTx);
+    transaction.sign(privateKey);
+    var serializedTx = transaction.serialize().toString('hex');
+    web3.eth.sendRawTransaction(
+    '0x' + serializedTx, function(err, result) {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log(result);
+        }
+    });
+}
