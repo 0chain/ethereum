@@ -1,15 +1,9 @@
 import web3 from "./web3";
 import dstr from "./dStorage";
-var fs = require('fs');
-import output from "./out/output.txt";
-import KEYS from "./config";
+import { KEYS, ZBOX_METADATA } from "./config";
 
-try {
-    var data = fs.readFileSync('output.txt', 'utf8');
-} catch(e) {
-    console.log('Error:', e.stack);
-}
 
+const data = ZBOX_METADATA;
 const ethTx = require('ethereumjs-tx');
 
 const txParams = {

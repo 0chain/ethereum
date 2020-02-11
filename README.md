@@ -23,11 +23,6 @@ Truffle integration for building decentralized applications with 0chain's dStora
 - Store the resultant metadata in an `config.js` file.
 - Run `npm start`.
 
-
- 
-
-
-
 ### Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
 
