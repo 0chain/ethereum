@@ -4,4 +4,10 @@ const KEYS = {
     CONTRACT_ADDRESS: ""
 }
 
-export default { KEYS };
+const ZBOX_METADATA = {
+    authTicket: "",
+    documentHash: "", 
+    lookupHash: ""
+}
+
+export default { KEYS, ZBOX_METADATA };

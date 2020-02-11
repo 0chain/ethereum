@@ -6,7 +6,6 @@ import KEYS from "./config";
 
 try {
     var data = fs.readFileSync('output.txt', 'utf8');
-    console.log(data);    
 } catch(e) {
     console.log('Error:', e.stack);
 }
