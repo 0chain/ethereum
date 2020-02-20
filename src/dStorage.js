@@ -1,5 +1,5 @@
 var web3 = require("./web3");
-var KEYS = require("./config");
+var KEYS = require("../config");
 
 let abi = [
     {
