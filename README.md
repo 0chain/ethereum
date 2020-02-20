@@ -19,9 +19,8 @@ Truffle integration for building decentralized applications with 0chain's dStora
 - Clone this repository and run  - `npm install`
 - Add your private key and ethereum wallet address from metamask to `config.js` file. 
 - Add the deployed contract address to `config.js` file (can be found on etherscan).
-- Add your zbox configurations in the `zbox_config` file.
-- Store the resultant metadata in an `config.js` file.
-- Run `npm start`.
+- Add your zbox configurations in the `zbox_config` file [here](https://github.com/0chain/ethereum/blob/master/zbox/zbox_config.json).
+- Run `npm start` to interact with the web application.
 
 ### Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/truffle/issues).
