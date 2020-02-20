@@ -3,7 +3,7 @@ Truffle integration for building decentralized applications with 0chain's dStora
 
 ## Running the Application with Remix IDE
 - Before deploying, install [metamask](https://metamask.io/) for your browser.
-- The smart contract - `dStorage.sol` can be found under `contracts` folder.
+- The smart contract - `dStorage.sol` can be found [here](https://github.com/0chain/ethereum/blob/master/contracts/dStorage.sol).
 - To compile and deploy the contract, copy and paste the code on the [remix IDE](http://remix.ethereum.org/).
 - Video demonstration for deploying the contract and running the app with remix can be found [here](https://youtu.be/weDEbgLA7_w).
 
