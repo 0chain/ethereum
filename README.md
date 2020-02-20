@@ -2,6 +2,7 @@
 Truffle integration for building decentralized applications with 0chain's dStorage protocol. 
 
 ## Running the Application with Remix IDE
+- Basic knowledge about ethereum and react. (Learn more about ethereum [here](https://medium.com/@mattcondon/getting-up-to-speed-on-ethereum-63ed28821bbe))
 - Before deploying, install [metamask](https://metamask.io/) for your browser.
 - The smart contract - `dStorage.sol` can be found [here](https://github.com/0chain/ethereum/tree/master/truffle/contracts).
 - To compile and deploy the contract, copy and paste the code on the [remix IDE](http://remix.ethereum.org/).
