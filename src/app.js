@@ -1,3 +1,5 @@
+import React, { Component } from "react";
+
 var Web3 = require('web3');
 var util = require('ethereumjs-util');
 var tx = require('ethereumjs-tx');
@@ -6,6 +8,11 @@ var txutils = lightwallet.txutils;
 var web3 = new Web3(
     new Web3.providers.HttpProvider('https://ropsten.infura.io/')
 );
+
+// Styling
+import { Layout } from "./Layout";
+import "./App.css";
+
 var KEYS = require('../config.js')
 var address = KEYS.ETH_ADDRESS;
 var key = KEYS.PRIVATE_KEY;
