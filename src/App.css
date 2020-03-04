@@ -1,35 +1,36 @@
 .App {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 .text-right{
-    background-color: #282c34;
-    text-align: right;
-    align-items: right;
-    justify-content: right;
-    color: white;
+  background-color: #282c34;
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+  color: white;
 }
 
 div {
-    top: '-15px';
+  top: '-15px';
 }
 
 span {
-  font-size: 24px;
+font-size: 24px;
 }
 
 body {
-  margin: 0;
-  background-size: auto;
-  background-repeat:no-repeat;
-  display: compact;
-  font: 13px/18px "Consolas", monaco, monospace;;
-  padding-top: 200px;
+margin: 0;
+background-size: auto;
+background: url('./background.jpg');
+background-repeat:no-repeat;
+display: compact;
+font: 13px/18px "Consolas", monaco, monospace;;
+padding-top: 200px;
 }
 
 #main {
-  border: 1px solid #000000;
-  display: flex;
-  flex-wrap: wrap;
-  align-content:center;
+border: 1px solid #000000;
+display: flex;
+flex-wrap: wrap;
+align-content:center;
 }

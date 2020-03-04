@@ -1,15 +1,14 @@
-var path = require('path');
-var scriptName = path.basename(__filename);
 var fs = require('fs');
+const { exec } = require('child_process');
 var config = require('./zbox_config.json')
 
 
 class Zbox {
 
 // Upload files to 0chain blobbers
-uploadFile(path, fileName) {
+uploadFile() {
   return new Promise((resolve, reject) => {
-    const uploadCommand = `${config["0chain"].zboxcli} upload --commit --localpath ${path} --remotepath /${fileName} --allocation ${config["0chain"].allocationId}`;
+    const uploadCommand = `${config["0chain"].zboxcli} upload --commit --localpath ${config["0chain"].localpath} --remotepath /${config["0chain"].fileName} --allocation ${config["0chain"].allocationId}`;
     console.log("Uploading file", uploadCommand);
     exec(uploadCommand, (err, stdout, stderr) => {
       if (err) {
@@ -28,9 +27,9 @@ uploadFile(path, fileName) {
 }
 
 // Upload files to 0chain blobbers
-batchUploadFile(path) {
+batchUploadFile() {
   return new Promise((resolve, reject) => {
-  const uploadCommand = `${config["0chain"].zboxcli} sync --allocation ${config["0chain"].allocationId} --localpath ${path} --commit --verbose --uploadonly`;
+  const uploadCommand = `${config["0chain"].zboxcli} sync --allocation ${config["0chain"].allocationId} --localpath ${config["0chain"].localpath} --commit --verbose --uploadonly`;
   console.log("Uploading folder (batch files)", uploadCommand);
 
   exec(uploadCommand, (err, stdout, stderr) => {
@@ -60,4 +59,4 @@ deleteUploadedFile(path) {
   }
 }
 
-module.exports = Zbox;
+export default Zbox;

@@ -1,73 +1,113 @@
-var web3 = require("./web3");
-var KEYS = require("../config");
+import web3 from './web3';
 
-let abi = [
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "client",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "authTicket",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "name": "documentHash",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "name": "lookupHash",
-          "type": "string"
-        }
-      ],
-      "name": "fileUpload",
-      "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_authTicket",
-          "type": "string"
-        },
-        {
-          "name": "_documentHash",
-          "type": "string"
-        },
-        {
-          "name": "_lookupHash",
-          "type": "string"
-        }
-      ],
-      "name": "uploadFile",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-  ];
-  
-let address = KEYS.CONTRACT_ADRESS; // deployed eth contract address from etherscan 
+const address = '0x02bae0e2da424cdadbb309e1256ec9647f0befe4';
 
-module.exports = new web3.eth.Contract(abi, address);
+const abi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_authTicket",
+				"type": "string"
+			},
+			{
+				"name": "_documentHash",
+				"type": "string"
+			},
+			{
+				"name": "_lookupHash",
+				"type": "string"
+			}
+		],
+		"name": "uploadMetadata",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "authTicket",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "documentHash",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getAuthTicket",
+		"outputs": [
+			{
+				"name": "_authTicket",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getDocumentHash",
+		"outputs": [
+			{
+				"name": "_documentHash",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getLookupHash",
+		"outputs": [
+			{
+				"name": "_lookupHash",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "lookupHash",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+  export default new web3.eth.Contract(abi, address);
