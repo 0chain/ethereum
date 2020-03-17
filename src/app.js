@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 // Styling the application
 import { Layout } from "./Layout";
 import './App.css';
-import { Button, Table } from 'react-bootstrap';
+import { Button, Table } from 'reactstrap';
 
-// importing eth dependencies
+// importing ethereum dependencies
 import web3 from './web3';
 import dts from './dStorage';
 
@@ -13,6 +13,13 @@ import dts from './dStorage';
 import { ZBOX_METADATA } from './config';
 import zbox from './zbox/zbox';
 import zbox_config from './zbox/zbox_config.json'
+
+// 0chain commit metadata - importing JS Client SDK
+import config from './0chain/cluster'
+import jsClientSdk from '0chain';
+
+// Init SDK
+// jsClientSdk.init(config, bls) --> Throws an err - `bls` need to be initialized.
 
 class App extends Component {
 
@@ -29,17 +36,20 @@ class App extends Component {
     fileName: ''
   };
 
-  uploadMetadataToZbox = (event) => {
-    event.stopPropagation()
-    event.preventDefault()
-    zbox.uploadFile(this.state.fileName)
+  uploadMetadataToZbox = () => {
+    try {
+      zbox.uploadFile(this.state.fileName)
+    } 
+    catch (error) {
+      console.log(error)
+    }
   };
 
 
   onClick = async () => {
     try {
-      this.setState({ blockNumber: "waiting..." });
-      this.setState({ gasUsed: "waiting..." });
+      this.setState({ blockNumber: "Loading" });
+      this.setState({ gasUsed: "Loading" });
 
       await web3.eth.getTransactionReceipt(this.state.transactionHash, (err, txReceipt) => {
         console.log(err, txReceipt);
@@ -59,7 +69,7 @@ class App extends Component {
     event.preventDefault();
     const accounts = await web3.eth.getAccounts();
 
-    console.log('Sending from Metamask account: ' + accounts[0]);
+    console.log('Sending from ethereum account: ' + accounts[0]);
 
     const ethAddress = await dts.options.address;
     this.setState({ ethAddress });
@@ -82,7 +92,7 @@ class App extends Component {
             <hr />
             <h4 className="text-white justify-center" >Step 1: Upload File to 0Chain</h4>
             <br />
-            <Button onSubmit={this.uploadMetadataToZbox} className="text-center"> Upload </Button>
+            <Button onClick={this.uploadMetadataToZbox} className="text-center"> Upload </Button>
             <hr />
             <h4 className="text-white justify-center" >Step 2: Commit Metadata to Ethereum</h4>
             <br />

@@ -29,7 +29,6 @@ uploadFile(fileName) {
 deleteUploadedFile(path) {
   try {
     fs.unlinkSync(path)
-    //file removed
   } catch (err) {
     console.error(err)
   }
