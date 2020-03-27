@@ -4,8 +4,6 @@
   <img src="https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png">
 </p>
 
-[test](https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png)
-
 ## Overview
 This goal of this integration is to create a decentralized app (dapp) that stores 0Chain's file metadata as a proof on Ethereum. 
 
