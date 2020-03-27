@@ -9,7 +9,7 @@ class SectionHeader extends Component {
         <Row>
           <Col xs="12" sm="3" />
           <Col xs="12" sm="6">
-            <h1 className="text-uppercase text-center">0Chain's Ethereum Integration</h1>
+            <h1 className="text-uppercase text-center">Ethereum Integration</h1>
           </Col>
         </Row>
       </Container>
