@@ -21,11 +21,11 @@ font-size: 24px;
 body {
 margin: 0;
 background-size: auto;
-background: url('./background.jpg');
+background: #f2f2f2;
 background-repeat:no-repeat;
 display: compact;
 font: 13px/18px "Consolas", monaco, monospace;;
-padding-top: 20px;
+padding-top: 90px;
 }
 
 #main {
