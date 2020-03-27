@@ -1,4 +1,5 @@
 # 0Chain Truffle Box
+![alt text](https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png)
 Ethereum integration with 0Chain's dStorage protocol for storing metadata on ethereum. 
 
 ### Prerequisites
