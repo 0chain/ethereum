@@ -1,5 +1,5 @@
 # 0Chain Truffle Box
-Ethereum integration for building decentralized applications with 0Chain's dStorage protocol. 
+Ethereum integration with 0Chain's dStorage protocol for storing metadata on ethereum. 
 
 ### Prerequisites
 1. Setup [zboxcli](https://github.com/0chain/zboxcli).
