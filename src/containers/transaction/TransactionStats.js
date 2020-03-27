@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col, Button, Table } from 'reactstrap';
 import zbox from '../../images/stats/zbox.png';
 import no_of_txs from '../../images/stats/no_of_txs.png';
 import eth from '../../images/stats/eth.png';
@@ -102,7 +102,7 @@ class TransactionStats extends Component {
                 icon={zbox}
               />
               <br/>
-              <Button>Upload</Button>
+              <Button onClick={this.uploadMetadataToZbox}>Upload</Button>
             </Col>
             <Col md="4">
               <MetricBox
@@ -123,6 +123,48 @@ class TransactionStats extends Component {
               <Button onClick={this.onClick}>Transaction Details</Button>
             </Col>
           </Row>
+          <div>
+            <br/>
+            <br/>
+          <Table bordered responsive>
+              <thead>
+                <tr>
+                  <th>Ethereum Transaction Details</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Document Hash</td>
+                  <td>{this.state.documentHash}</td>
+                </tr>
+                <tr>
+                  <td>Lookup Hash</td>
+                  <td>{this.state.lookupHash}</td>
+                </tr>
+                <tr>
+                  <td>Allocation ID</td>
+                  <td>{this.state.allocationId}</td>
+                </tr>
+                <tr>
+                  <td>Ethereum Contract Address</td>
+                  <td>{this.state.ethAddress}</td>
+                </tr>
+                <tr>
+                  <td>Transaction Hash </td>
+                  <td>{this.state.transactionHash}</td>
+                </tr>
+                <tr>
+                  <td>Block Number </td>
+                  <td>{this.state.blockNumber}</td>
+                </tr>
+                <tr>
+                  <td>Gas Used</td>
+                  <td>{this.state.gasUsed}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
         </div>
       );
     }
