@@ -20,7 +20,15 @@ This goal of this integration is to create a decentralized app (dapp) that store
 
 ### Run the App
 1. Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
-2. Add your zbox configurations in the `zbox_config` file [here](https://github.com/0chain/ethereum/blob/master/src/zbox/zbox_config.json).
+2. Add the following zbox configurations in the `zbox_config` file [here](https://github.com/0chain/ethereum/blob/master/src/zbox/zbox_config.json):
+  - zboxcli: The path to your `zboxcli` repository,
+  - zcn_home : The path to `.zcn` directory stored in your root folder,
+  - upload_path : The path to where you want to upload your file,
+  - download_path : The path to your downloads folder,
+  - allocationId: The allocation ID generated after your setup your `zboxcli`. (To get an allocation ID run - `./zbox newallocation`),
+  - localpath: Absolute path to the file on your local system,
+  - remotepath: Remote path where you want to store. It should start with "/",
+  - walletInfo: The generated wallet information after registering your wallet with zboxcli.
 3. On the web application, upload a file to the Ochain blockchain by pressing `Upload`, to generate metadata for your uploaded file.
 4. After generating your file metadata, press `commit` to add your metadata to ethereum. .
 6. You can get your ethereum transaction details on the table below. 
