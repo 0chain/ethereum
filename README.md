@@ -1,13 +1,19 @@
 # 0Chain Truffle Box
-Ethereum integration with 0Chain's dStorage protocol for storing metadata on ethereum. 
+
+<p align="center">
+  <img src="https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png">
+</p>
+
+[test](https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png)
+
+## Overview
+This goal of this integration is to create a decentralized app (dapp) that stores 0Chain's file metadata as a proof on Ethereum. 
 
 ## Features
 
 - Upload file to the 0Chain blockchain that uses the dStorage protocol. 
 - Generate metadata of the uploaded file and commit proof to ethereum.
 - Get transaction details for your ethereum transaction. 
-
-![](https://github.com/0chain/ethereum/blob/master/src/images/0chain-readme.png)
 
 ### Prerequisites
 1. Setup [zboxcli](https://github.com/0chain/zboxcli).
