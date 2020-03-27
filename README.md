@@ -7,6 +7,8 @@
 ## Overview
 This goal of this integration is to create a decentralized app (dapp) that stores 0Chain's file metadata as a proof on Ethereum. 
 
+If you're new to Ethereum, learn more about it [here](https://medium.com/@mattcondon/getting-up-to-speed-on-ethereum-63ed28821bbe)
+
 ## Features
 
 - Upload file to the 0Chain blockchain that uses the dStorage protocol. 
@@ -17,6 +19,7 @@ This goal of this integration is to create a decentralized app (dapp) that store
 - Setup [zboxcli](https://github.com/0chain/zboxcli).
 - Install [truffle](https://www.npmjs.com/package/truffle) globally - `npm install -g truffle`.
 - Install [metamask](https://www.metamask.io) for your browser. (Make sure you have enough funds.)
+  - To get some funds for your metamask wallet, make a request to a [faucet](https://faucet.metamask.io)
 
 ### Run the App
 - Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
