@@ -15,15 +15,23 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 - Generate metadata of the uploaded file and commit proof to ethereum.
 - Get transaction details for your ethereum transaction. 
 
-### Prerequisites
+## Prerequisites
 - Setup [zboxcli](https://github.com/0chain/zboxcli).
 - Install [truffle](https://www.npmjs.com/package/truffle) globally - `npm install -g truffle`.
 - Install [metamask](https://www.metamask.io) for your browser. (Make sure you have enough funds.)
-  - To get some funds for your metamask wallet, make a request to a [faucet](https://faucet.metamask.io)
+  - To get some funds for your metamask wallet, make a request to a [faucet](https://faucet.metamask.io).
 
-### Run the App
+## Setting up zboxcli 
+- Make sure you have Go V1.12 or higher installed on your computer. 
+- Clone the repository - `git clone https://github.com/0chain/zboxcli.git`
+- In the zboxcli directory run - `make install`
+- Run the following commands after, to set up the network config:
+  -  `mkdir ~/.zcn && cp network/one.yaml ~/.zcn/config.yaml`
+- Lastly, run `./zbox` to check if the setup is successful.
+
+## Run the App
 - Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
-- Add the following zbox configurations in the `zbox_config` file [here](https://github.com/0chain/ethereum/blob/master/src/zbox/zbox_config.json):
+- Add the following zbox configurations in the `config.json` file [here](https://github.com/0chain/ethereum/blob/master/src/zbox/zbox_config.json):
   - zboxcli: The path to your `zboxcli` repository,
   - zcn_home : The path to `.zcn` directory stored in your root folder,
   - upload_path : The path to where you want to upload your file,
@@ -36,12 +44,12 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 - After generating your file metadata, press `commit` to add your metadata to ethereum. .
 - You can get your ethereum transaction details on the table below. 
 
-### Questions
+## Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/ethereum/issues).
 
 ### Tests
 Smart contract tested with [MythX](https://mythx.io/).
 
 ### Author
-[Jenil K. Thakker](http://github.com/jenil04)
+[Jenil Thakker](http://github.com/jenil04)
 
