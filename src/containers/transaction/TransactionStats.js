@@ -106,7 +106,7 @@ class TransactionStats extends Component {
             </Col>
             <Col md="4">
               <MetricBox
-                metric={'Commit Metadata to Ethereum'}
+                metric={'Commit Meta to Ethereum'}
                 value={''}
                 icon={eth}
               />
