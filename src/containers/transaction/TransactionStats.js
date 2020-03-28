@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Table } from 'reactstrap';
+import { Row, Col, Button, Table, Spinner, Alert} from 'reactstrap';
 import zbox from '../../images/stats/zbox.png';
 import no_of_txs from '../../images/stats/no_of_txs.png';
 import eth from '../../images/stats/eth.png';
 import MetricBox from '../../components/transactions/MetricBox';
+import ShowModal from '../../components/modal/ShowModal'
 
 // importing ethereum dependencies
 import web3 from '../../web3';
@@ -16,17 +17,7 @@ import zbox_config from '../../config/config.json'
 import config from '../../0chain/cluster'
 import jsClientSdk from '0chain';
 
-// Init SDK
-const bls = window.bls
-  bls.init().then(()=>{
-    console.log('ok')
-    const sec = new bls.SecretKey()
-    sec.setByCSPRNG()
-    sec.dump()
-  })
-
-jsClientSdk.init(config, bls) 
-
+jsClientSdk.init(config, window.bls);
 
 class TransactionStats extends Component { 
 
@@ -46,8 +37,8 @@ class TransactionStats extends Component {
   
   uploadMetadataToZbox = async () => {
     try {
-      await jsClientSdk.commitMetaTransaction(this.state.walletInfo, "Upload", 
-      this.state.allocationId, this.state.remotePath);
+        await jsClientSdk.commitMetaTransaction(this.state.walletInfo, "Upload", 
+        this.state.allocationId, this.state.remotePath)
     } 
     catch (error) {
       console.log(error)
@@ -56,8 +47,8 @@ class TransactionStats extends Component {
   
   onClick = async () => {
     try {
-      this.setState({ blockNumber: "Loading" });
-      this.setState({ gasUsed: "Loading" });
+      this.setState({ blockNumber: <Spinner color="dark" /> });
+      this.setState({ gasUsed: <Spinner color="dark" /> });
   
       await web3.eth.getTransactionReceipt(this.state.transactionHash, (err, txReceipt) => {
         console.log(err, txReceipt);
@@ -69,7 +60,7 @@ class TransactionStats extends Component {
     }
   
     catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
   
@@ -91,6 +82,7 @@ class TransactionStats extends Component {
   };
   
     render() {
+
       return (
         <div>
           <Row>

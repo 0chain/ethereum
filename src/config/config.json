@@ -1,13 +1,22 @@
 {
     "0chain": {
-        "zboxcli": "/Users/jenil/0chain-projects/zboxcli/zbox",
+        "zboxcli": "/Users/jenil/desktop/code/zboxcli/zbox",
         "zcn_home" : "/Users/jenil/.zcn",
-        "upload_path" : "/Users/jenil/0chain-projects/uploads",
-        "download_path" : "/Users/jenil/0chain-projects/downloads",
-        "allocationId": "",
+        "upload_path" : "/Users/jenil/desktop/code/0chain/uploads",
+        "download_path" : "/Users/jenil/desktop/code/0chain/downloads",
+        "allocationId": "7c79009d6a88e4d13c6a59d3fc1dbbf13c724ded43e282b272cc478f8078346d",
         "localpath": "",
         "remotepath": "",
-        "walletInfo": ""
+        "walletInfo": {
+          "cluster_name": "local",
+          "creation_date": "1585381443",
+          "id": "dcc26a6496a881ffa9bfdc32904344fc39ebc069e3991a582dea5a25fdb7c64f",
+          "mnemonic": "word improve joy patient inject length raven picnic then tuna auction argue balcony race cherry bird myth august found nuclear stomach fan square visit",
+          "public_key": "6727314c68147a3260031851fbbcbae8123c3dcf19677919062838a96471e305557ddb8e140a1378043bd69dc45b3be247685ecec33480782fa226f7d2e77b06",
+          "secretKey": "53cefddc4b00fb8d47abdb5983a06aee4525ad6a9efc195b040c6be9cb1bd218",
+          "timeStamp": "1585381443",
+          "version": "1.0"
+          }
     },
 
     "ZBOX_METADATA": {
