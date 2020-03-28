@@ -4,9 +4,17 @@
         "zcn_home" : "/Users/jenil/.zcn",
         "upload_path" : "/Users/jenil/0chain-projects/uploads",
         "download_path" : "/Users/jenil/0chain-projects/downloads",
-        "allocationId": " ",
+        "allocationId": "test",
         "localpath": "test",
         "remotepath": "test",
         "walletInfo": "test"
-      }
+    },
+
+    "ZBOX_METADATA": {
+      "authTicket" : "",
+      "documentHash" : "", 
+      "lookupHash" : "",
+      "encyptionKey" : "",
+      "reEncryptionKey" : "" 
+  }
 }

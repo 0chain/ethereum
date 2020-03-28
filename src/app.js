@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-// Styling the application
 import { Layout } from "./components/layouts/Layout";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PageLayout from './components/layouts/Page';
