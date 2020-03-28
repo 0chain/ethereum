@@ -5,9 +5,9 @@
         "upload_path" : "/Users/jenil/0chain-projects/uploads",
         "download_path" : "/Users/jenil/0chain-projects/downloads",
         "allocationId": "",
-        "localpath": "test",
-        "remotepath": "test",
-        "walletInfo": "test"
+        "localpath": "",
+        "remotepath": "",
+        "walletInfo": ""
     },
 
     "ZBOX_METADATA": {
