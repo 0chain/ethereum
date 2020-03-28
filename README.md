@@ -7,7 +7,7 @@
 ## Overview
 This goal of this integration is to create a decentralized app (dapp) that stores 0Chain's file metadata as a proof on Ethereum. 
 
-If you're new to Ethereum, learn more about it [here](https://medium.com/@mattcondon/getting-up-to-speed-on-ethereum-63ed28821bbe)
+If you're new to Ethereum, learn more about it [here](https://medium.com/@mattcondon/getting-up-to-speed-on-ethereum-63ed28821bbe).
 
 ## Features
 
@@ -31,7 +31,7 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 
 ## Run the App
 - Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
-- Add the following zbox configurations in the `config.json` file [here](https://github.com/0chain/ethereum/blob/master/src/zbox/zbox_config.json):
+- Add the following zbox configurations in the `config.json` file [here](https://github.com/0chain/ethereum/tree/master/src/config):
   - zboxcli: The path to your `zboxcli` repository,
   - zcn_home : The path to `.zcn` directory stored in your root folder,
   - upload_path : The path to where you want to upload your file,
@@ -47,9 +47,9 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 ## Questions
 For any questions regarding this repository open an issue [here](https://github.com/0chain/ethereum/issues).
 
-### Tests
+## Tests
 Smart contract tested with [MythX](https://mythx.io/).
 
-### Author
+## Author
 [Jenil Thakker](http://github.com/jenil04)
 
