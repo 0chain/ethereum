@@ -7,6 +7,8 @@
         "allocationId": "7c79009d6a88e4d13c6a59d3fc1dbbf13c724ded43e282b272cc478f8078346d",
         "localpath": "",
         "remotepath": "",
+        "ZeroChainAddress": "",
+        "fileToBeUploaded" : "",
         "walletInfo": {
           "cluster_name": "local",
           "creation_date": "1585381443",

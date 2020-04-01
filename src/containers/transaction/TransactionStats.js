@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Table, Spinner, Alert} from 'reactstrap';
+import { Row, Col, Button, Table, Spinner} from 'reactstrap';
 import zbox from '../../images/stats/zbox.png';
 import no_of_txs from '../../images/stats/no_of_txs.png';
 import eth from '../../images/stats/eth.png';
 import MetricBox from '../../components/transactions/MetricBox';
-import ShowModal from '../../components/modal/ShowModal'
 
 // importing ethereum dependencies
 import web3 from '../../web3';
@@ -32,13 +31,16 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocationId,
     remotePath: zbox_config["0chain"].remotepath,
-    walletInfo: zbox_config["0chain"].walletInfo
+    walletInfo: zbox_config["0chain"].walletInfo,
+    ZeroChainAddress: zbox_config["0chain"].ZeroChainAddress,
+    fileToBeUploaded: zbox_config["0chain"].fileToBeUploaded,
+    note: 'Upload File to 0Chain'
   };
   
   uploadMetadataToZbox = async () => {
     try {
-        await jsClientSdk.commitMetaTransaction(this.state.walletInfo, "Upload", 
-        this.state.allocationId, this.state.remotePath)
+        await jsClientSdk.storeData(this.state.ZeroChainAddress, 
+          this.state.fileToBeUploaded, this.state.note)
     } 
     catch (error) {
       console.log(error)
@@ -66,10 +68,18 @@ class TransactionStats extends Component {
   
   onPress = async (event) => {
     event.preventDefault();
+
+    // Fetching metadata from 0Chain blockchain.
+    await jsClientSdk.commitMetaTransaction(this.state.walletInfo, "Upload", 
+        this.state.allocationId, this.state.remotePath).then((res) => {
+          this.setState({documentHash: res.metaData.documentHash,
+          authTicket: res.metaData.authTicket, lookupHash: res.metaData.lookupHash})
+        }, (err) => {
+          console.log("Error fetching metadata.")
+        })
+
     const accounts = await web3.eth.getAccounts();
-  
-    console.log('Sending from ethereum account: ' + accounts[0]);
-  
+    
     const ethAddress = await dts.options.address;
     this.setState({ ethAddress });
   
