@@ -17,6 +17,7 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 
 ## Prerequisites
 - Setup [zboxcli](https://github.com/0chain/zboxcli).
+- Setup [0Chain Proxy Server](https://github.com/0chain/0Chain_proxy_server).
 - Install [truffle](https://www.npmjs.com/package/truffle) globally - `npm install -g truffle`.
 - Install [metamask](https://www.metamask.io) for your browser. (Make sure you have enough funds.)
   - To get some funds for your metamask wallet, make a request to a [faucet](https://faucet.metamask.io).
