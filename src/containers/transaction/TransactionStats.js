@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Table, Spinner} from 'reactstrap';
+import { Row, Col, Button, Table, Spinner, Alert} from 'reactstrap';
 import zbox from '../../images/stats/zbox.png';
 import no_of_txs from '../../images/stats/no_of_txs.png';
 import eth from '../../images/stats/eth.png';
@@ -39,6 +39,7 @@ class TransactionStats extends Component {
     allocationId: zbox_config["0chain"].allocationId,
     remotePath: zbox_config["0chain"].remotepath,
     walletInfo: zbox_config["0chain"].walletInfo,
+    error: null
   };
   
   uploadMetadataToZbox = async () => {
@@ -47,7 +48,7 @@ class TransactionStats extends Component {
         console.log("upload successfull")
     } 
     catch (error) {
-      console.log(error)
+      this.setState({ error: error });
     }
   };
   
@@ -66,37 +67,47 @@ class TransactionStats extends Component {
     }
   
     catch (error) {
-      console.log(error)
+      this.setState({ error: error });
     }
   }
   
   onPress = async (event) => {
     event.preventDefault();
-
-    // Fetching metadata from 0Chain blockchain.
-    await jsClientSdk.getFileMetaDataFromPath(this.state.allocationId, 
+    try {
+        // Fetching metadata from 0Chain blockchain.
+        await jsClientSdk.getFileMetaDataFromPath(this.state.allocationId, 
         this.state.remotePath, this.state.walletInfo).then((res) => {
           console.log(res)
           this.setState({documentHash: res.metaData.documentHash,
           authTicket: res.metaData.authTicket, lookupHash: res.metaData.lookupHash})
-        }, (err) => {
-          console.log("Error fetching metadata.")
-        })
+      }, (error) => {
+        this.setState({ error });
+      })
 
-    const accounts = await web3.eth.getAccounts();
-    
-    const ethAddress = await dts.options.address;
-    this.setState({ ethAddress });
+      const accounts = await web3.eth.getAccounts();
   
-    await dts.methods.uploadMetadata(this.state.documentHash, this.state.authTicket, this.state.lookupHash).send({
-      from: accounts[0]
-    }, (error, transactionHash) => {
-      console.log(transactionHash);
-      this.setState({ transactionHash });
-    });
+      const ethAddress = await dts.options.address;
+      this.setState({ ethAddress });
+
+      await dts.methods.uploadMetadata(this.state.documentHash, this.state.authTicket, this.state.lookupHash).send({
+        from: accounts[0]
+        }, (error, transactionHash) => {
+          console.log(transactionHash);
+          this.setState({ transactionHash });
+      });
+    }
+    catch (error) {
+      this.setState({ error: error });
+    }
   };
   
     render() {
+
+      if (this.state.error) {
+        return <Alert color="danger">
+        Error: {this.state.error}
+      </Alert>
+      }
 
       return (
         <div>
