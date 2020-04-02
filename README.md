@@ -10,10 +10,15 @@ This goal of this integration is to create a decentralized app (dapp) that store
 If you're new to Ethereum, learn more about it [here](https://medium.com/@mattcondon/getting-up-to-speed-on-ethereum-63ed28821bbe).
 
 ## Features
-
 - Upload file to the 0Chain blockchain that uses the dStorage protocol. 
 - Generate metadata of the uploaded file and commit proof to ethereum.
 - Get transaction details for your ethereum transaction. 
+
+## Preview
+
+<p align="center">
+  <img src="https://github.com/0chain/ethereum/blob/master/src/images/preview.png">
+</p>
 
 ## Prerequisites
 - Setup [zboxcli](https://github.com/0chain/zboxcli).
