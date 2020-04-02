@@ -11,7 +11,7 @@ var config = {
   ],
   "chain_id" :   "0afc093ffb509f059c55478bc1a60351cef7b4e9c008a53a6cc8241ca8617dfe",
   "clusterName" : "0chain-local-cluster",
-  "proxyServerUrl" : "http://one.0box.io:9082/",
+  "proxyServerUrl" : "http://one.0box.io:9082",
   "backendUrl": "http://localhost:3000/",
   "dataSource": "block-chain",
   "transaction_timeout" : 20,

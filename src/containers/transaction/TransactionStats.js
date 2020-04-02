@@ -19,12 +19,6 @@ import file from '../../data/hello.txt'
 
 jsClientSdk.init(config, window.bls);
 
-const payload = new FormData();
-payload.append('file', file);
-payload.append('allocation', zbox_config["0chain"].allocationId);
-payload.append('remote_path', zbox_config["0chain"].remotepath);
-payload.append('client_json', zbox_config["0chain"].walletInfo);
-
 class TransactionStats extends Component { 
 
   state = {
@@ -44,11 +38,12 @@ class TransactionStats extends Component {
   
   uploadMetadataToZbox = async () => {
     try {
-        await jsClientSdk.uploadObject(payload)
+        await jsClientSdk.uploadObject(file, this.state.allocationId, 
+          this.state.remotePath, this.state.walletInfo)
         console.log("upload successfull")
     } 
     catch (error) {
-      this.setState({ error: error });
+      console.log(error)
     }
   };
   
@@ -67,7 +62,7 @@ class TransactionStats extends Component {
     }
   
     catch (error) {
-      this.setState({ error: error });
+      console.log(error)
     }
   }
   
@@ -81,7 +76,7 @@ class TransactionStats extends Component {
           this.setState({documentHash: res.metaData.documentHash,
           authTicket: res.metaData.authTicket, lookupHash: res.metaData.lookupHash})
       }, (error) => {
-        this.setState({ error });
+        console.log(error);
       })
 
       const accounts = await web3.eth.getAccounts();
@@ -97,7 +92,7 @@ class TransactionStats extends Component {
       });
     }
     catch (error) {
-      this.setState({ error: error });
+      console.log(error);
     }
   };
   
