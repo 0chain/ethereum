@@ -51,7 +51,7 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
   - download_path : The path to your downloads folder,
   - allocationId: The allocation ID generated after your setup your `zboxcli`. (To get an allocation ID run - `./zbox newallocation` under zbox directory),
   - localpath: Absolute path to the file on your local system,
-  - remotepath: Remote path where you want to store. It should start with "/",
+  - remotepath: Remote path where you want to store. It should start with `/`,
   - walletInfo: The generated wallet information after registering your wallet with zboxcli. This can be found in here: `~/.zcn/wallet.json`. 
 - Sample configuration are pre-filled for reference.
 
