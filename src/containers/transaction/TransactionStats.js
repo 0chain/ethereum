@@ -17,6 +17,7 @@ import config from '../../0chain/cluster'
 import jsClientSdk from '0chain';
 import file from '../../data/hello.txt'
 
+// Initialize 0Chain jsClientSDK
 jsClientSdk.init(config, window.bls);
 
 class TransactionStats extends Component { 
@@ -32,9 +33,7 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocationId,
     remotePath: zbox_config["0chain"].remotepath,
-    walletInfo: zbox_config["0chain"].walletInfo,
-    error: null
-  };
+    walletInfo: zbox_config["0chain"].walletInfo  };
   
   uploadMetadataToZbox = async () => {
     try {
