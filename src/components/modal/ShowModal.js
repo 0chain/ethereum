@@ -11,9 +11,10 @@ jsClientSdk.init(config, window.bls);
 class UploadFileToChain extends Component {
   state = {
     file: null,
-    allocationId: zbox_config["0chain"].allocationId,
-    remotePath: zbox_config["0chain"].remotepath,
-    walletInfo: zbox_config["0chain"].walletInfo
+    allocationId: zbox_config["0chain"].allocation,
+    remotePath: zbox_config["0chain"].remote_path,
+    walletInfo: zbox_config["0chain"].client_json,
+    errorMessage: ''
   }
 
   onFileUpload = event => {
@@ -30,7 +31,6 @@ class UploadFileToChain extends Component {
         console.log(this.state.walletInfo)
         await jsClientSdk.uploadObject(this.state.file, this.state.allocationId, 
           this.state.remotePath, this.state.walletInfo)
-        console.log("upload successfull")
     } 
     catch (error) {
       console.log(error)
