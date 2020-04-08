@@ -1,1 +1,0 @@
-Hi, this is a sample file for testing 0Chain upload function.

@@ -58,8 +58,6 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 ## Run the App
 - Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
 - **Step 1**: On the web application, upload a file to the Ochain blockchain by pressing `Upload`. 
-  - You can add the file you want to upload under the data folder [here](https://github.com/0chain/ethereum/tree/master/src/data).
-  - Additionally, add import the file [here](https://github.com/0chain/ethereum/tree/master/src/containers/transaction).
 - **Step 2**: After  generating your file metadata, press `commit` to add your metadata to ethereum. .
 - **Step 3**: You can get your ethereum transaction details on the table below. 
 
