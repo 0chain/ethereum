@@ -49,10 +49,10 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
   - zcn_home : The path to `.zcn` directory stored in your root folder,
   - upload_path : The path to where you want to upload your file,
   - download_path : The path to your downloads folder,
-  - allocationId: The allocation ID generated after your setup your `zboxcli`. (To get an allocation ID run - `./zbox newallocation` under zbox directory),
+  - allocation: The allocation ID generated after your setup your `zboxcli`. (To get an allocation ID run - `./zbox newallocation` under zbox directory),
   - localpath: Absolute path to the file on your local system,
-  - remotepath: Remote path where you want to store. It should start with `/`,
-  - walletInfo: The generated wallet information after registering your wallet with zboxcli. This can be found in here: `~/.zcn/wallet.json`. 
+  - remote_path: Remote path where you want to store. It should start with `/`,
+  - client_json: The generated wallet information after registering your wallet with zboxcli. This can be found in here: `~/.zcn/wallet.json`. 
 - Sample configurations are pre-filled for reference.
 - **Note**: If the configs are not entered correctly, upload to 0Chain and Ethereum will throw errors. 
 
