@@ -64,7 +64,7 @@ const ShowModal = (props) => {
     <div>
       <Button onClick={toggle}>Upload</Button>
       <Modal isOpen={modal} toggle={toggle} >
-        <ModalHeader toggle={toggle}>Upload File to 0Chain </ModalHeader>
+        <ModalHeader toggle={toggle}>Choose File to Upload</ModalHeader>
         <ModalBody>
           <UploadFileToChain/> 
         </ModalBody>

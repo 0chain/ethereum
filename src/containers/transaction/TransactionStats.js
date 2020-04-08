@@ -33,9 +33,7 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocationId,
     remotePath: zbox_config["0chain"].remotepath,
-    walletInfo: zbox_config["0chain"].walletInfo,
-    file: null
-  };
+    walletInfo: zbox_config["0chain"].walletInfo  };
 
     onFileUpload = event => {
       this.setState({

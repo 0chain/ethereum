@@ -53,7 +53,8 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
   - localpath: Absolute path to the file on your local system,
   - remotepath: Remote path where you want to store. It should start with `/`,
   - walletInfo: The generated wallet information after registering your wallet with zboxcli. This can be found in here: `~/.zcn/wallet.json`. 
-- Sample configuration are pre-filled for reference.
+- Sample configurations are pre-filled for reference.
+- **Note**: If the configs are not entered correctly, upload to 0Chain and Ethereum will throw errors. 
 
 ## Run the App
 - Clone this repository and run  - `npm install` and run `npm start` to launch the web application.
@@ -61,8 +62,8 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 - **Step 2**: After  generating your file metadata, press `commit` to add your metadata to ethereum. .
 - **Step 3**: You can get your ethereum transaction details on the table below. 
 
-## Questions
-For any questions regarding this repository open an issue [here](https://github.com/0chain/ethereum/issues).
+## Issues
+For any questions or errors regarding this repository open an issue [here](https://github.com/0chain/ethereum/issues).
 
 ## Tests
 Smart contract tested with [MythX](https://mythx.io/).
