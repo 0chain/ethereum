@@ -18,4 +18,4 @@ var config = {
   "state " : true
 }
 
-export default {config}
+export default config

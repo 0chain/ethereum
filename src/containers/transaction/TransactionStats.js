@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Table, Spinner, Alert} from 'reactstrap';
+import { Row, Col, Button, Table, Spinner} from 'reactstrap';
 import zbox from '../../images/stats/zbox.png';
 import no_of_txs from '../../images/stats/no_of_txs.png';
 import eth from '../../images/stats/eth.png';
 import MetricBox from '../../components/transactions/MetricBox';
+import ShowModal from '../../components/modal/ShowModal';
 
 // importing ethereum dependencies
 import web3 from '../../web3';
 import dts from '../../dStorage';
 
-// 0chain dStorage Metadata.
+// 0chain dStorage Metadata
 import zbox_config from '../../config/config.json'
 
 // 0chain commit metadata - importing JS Client SDK
 import config from '../../0chain/cluster'
 import jsClientSdk from '0chain';
-import file from '../../data/hello.txt'
 
 // Initialize 0Chain jsClientSDK
 jsClientSdk.init(config, window.bls);
@@ -33,11 +33,20 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocationId,
     remotePath: zbox_config["0chain"].remotepath,
-    walletInfo: zbox_config["0chain"].walletInfo  };
+    walletInfo: zbox_config["0chain"].walletInfo,
+    file: null
+  };
+
+    onFileUpload = event => {
+      this.setState({
+        file: event.target.files[0]
+      });
+    };
   
   uploadMetadataToZbox = async () => {
     try {
-        await jsClientSdk.uploadObject(file, this.state.allocationId, 
+      console.log(this.state.file)
+        await jsClientSdk.uploadObject(this.state.file, this.state.allocationId, 
           this.state.remotePath, this.state.walletInfo)
         console.log("upload successfull")
     } 
@@ -96,13 +105,6 @@ class TransactionStats extends Component {
   };
   
     render() {
-
-      if (this.state.error) {
-        return <Alert color="danger">
-        Error: {this.state.error}
-      </Alert>
-      }
-
       return (
         <div>
           <Row>
@@ -113,7 +115,7 @@ class TransactionStats extends Component {
                 icon={zbox}
               />
               <br/>
-              <Button onClick={this.uploadMetadataToZbox}>Upload</Button>
+              <ShowModal />
             </Col>
             <Col md="4">
               <MetricBox
