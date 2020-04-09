@@ -33,24 +33,7 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocation,
     remotePath: zbox_config["0chain"].remote_path,
-    walletInfo: zbox_config["0chain"].client_json  };
-
-    onFileUpload = event => {
-      this.setState({
-        file: event.target.files[0]
-      });
-    };
-  
-  uploadMetadataToZbox = async () => {
-    try {
-      console.log(this.state.file)
-        await jsClientSdk.uploadObject(this.state.file, this.state.allocationId, 
-          this.state.remotePath, this.state.walletInfo)
-        console.log("upload successfull")
-    } 
-    catch (error) {
-      console.log(error)
-    }
+    walletInfo: zbox_config["0chain"].client_json  
   };
   
   onClick = async () => {
@@ -74,6 +57,12 @@ class TransactionStats extends Component {
   
   onPress = async (event) => {
     event.preventDefault();
+
+    const accounts = await web3.eth.getAccounts();
+  
+    const ethAddress = await dts.options.address;
+    this.setState({ ethAddress });
+
     try {
         // Fetching metadata from 0Chain blockchain.
         await jsClientSdk.getFileMetaDataFromPath(this.state.allocationId, 
@@ -84,11 +73,6 @@ class TransactionStats extends Component {
       }, (error) => {
         console.log(error);
       })
-
-      const accounts = await web3.eth.getAccounts();
-  
-      const ethAddress = await dts.options.address;
-      this.setState({ ethAddress });
 
       await dts.methods.uploadMetadata(this.state.documentHash, this.state.authTicket, this.state.lookupHash).send({
         from: accounts[0]

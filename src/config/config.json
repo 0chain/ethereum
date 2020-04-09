@@ -6,18 +6,20 @@
         "download_path" : "/Users/jenil/desktop/code/0chain/downloads",
         "allocation": "2fbef4ab540ce2065b50da9fa844a983c40a366174b88acfe1b4f841e8a49a5b",
         "localpath": "",
-        "remote_path": "/Users/jenil/Desktop/docs/hello.txt",
+        "remote_path": "/hello.txt",
         "client_json": {
-          "date_created": "2020-04-04 11:22:24.919261 +0530 IST m=+0.031887766",
           "client_id": "be9284b11f531d8b5969780054017a345b2c25be33971a981c0a5810456356b3",
           "client_key": "2763414a91c40f349471ef604b33f481838bc0ce00a21418e794a647fcd6bd1ae3b84730434b922b94189e419b12a0a7a8f5823ed9ed1cf476c8fb01456f8400",
-          "keys": {
-            "public_key": "2763414a91c40f349471ef604b33f481838bc0ce00a21418e794a647fcd6bd1ae3b84730434b922b94189e419b12a0a7a8f5823ed9ed1cf476c8fb01456f8400",
-            "private_key": "2026cc6fb7225018cc144f37b31ba4c6003138f4105127f698f6fb7dc7815300"
-          },
-          "mnemonics": "flame crater chapter amount random upset promote mixed fun inmate unaware hold normal album ankle loan sponsor tube icon select museum valve axis choice",
-          "version": "1.0"
-          }
+          "keys": [
+            {
+              "public_key": "2763414a91c40f349471ef604b33f481838bc0ce00a21418e794a647fcd6bd1ae3b84730434b922b94189e419b12a0a7a8f5823ed9ed1cf476c8fb01456f8400",
+              "private_key": "2026cc6fb7225018cc144f37b31ba4c6003138f4105127f698f6fb7dc7815300"
+            }
+          ],
+          "mnemonic": "flame crater chapter amount random upset promote mixed fun inmate unaware hold normal album ankle loan sponsor tube icon select museum valve axis choice",
+          "version": "1.0",
+          "date_created": "2020-04-04 11:22:24.919261 +0530 IST m=+0.031887766"
+        }
     },
 
     "ZBOX_METADATA": {
