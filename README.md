@@ -20,6 +20,9 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
   <img src="https://github.com/0chain/ethereum/blob/master/src/images/preview.png">
 </p>
 
+## Demo
+- You can find a video demo of the web-app [here](https://youtu.be/zk00UCgQLMc).
+
 ## Prerequisites
 - Setup [zboxcli](https://github.com/0chain/zboxcli).
 - Setup [0Chain Proxy Server](https://github.com/0chain/0Chain_proxy_server).

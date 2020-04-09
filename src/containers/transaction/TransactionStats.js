@@ -68,7 +68,6 @@ class TransactionStats extends Component {
         // Fetching metadata from 0Chain blockchain.
         await jsClientSdk.getFileMetaDataFromPath(this.state.allocationId, 
         this.state.remotePath, this.state.client_id).then((res) => {
-          console.log(res)
           this.setState({documentHash: res.hash,
           authTicket: res.merkle_root, lookupHash: res.lookup_hash})
       }, (error) => {
