@@ -1,5 +1,5 @@
 import React, { useState, Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Alert} from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Alert, Progress} from 'reactstrap';
 
 import config from '../../0chain/cluster'
 import jsClientSdk from '0chain';
@@ -14,7 +14,8 @@ class UploadFileToChain extends Component {
     allocationId: zbox_config["0chain"].allocation,
     remotePath: zbox_config["0chain"].remote_path,
     walletInfo: zbox_config["0chain"].client_json,
-    message: ''
+    message: '',
+    progress: ''
   }
 
   onFileUpload = event => {
@@ -26,11 +27,13 @@ class UploadFileToChain extends Component {
   uploadMetadataToZbox = async () => {
     try {
         this.setState({message: <Alert color="info">Uploading file to 0Chain, this may take a moment.</Alert>})
+        this.setState({progress: <Progress color="info" value={50}>Uploading file...</Progress>})
 
         await jsClientSdk.uploadObject(this.state.file, this.state.allocationId, 
           this.state.remotePath, this.state.walletInfo)
-        
+      
         this.setState({message: <Alert color="success">File successfully uploaded to 0Chain!</Alert>})
+        this.setState({progress: <Progress color="info" value={50}>Uploading finished!</Progress>})
     } 
     catch (error) {
       console.log(error)
@@ -49,6 +52,7 @@ class UploadFileToChain extends Component {
         <br/>
         <Button onClick={this.uploadMetadataToZbox}>Upload</Button>
         {this.state.message}
+        {this.state.progress}
       </div>
     )
   }
@@ -67,7 +71,7 @@ const ShowModal = (props) => {
       <Modal isOpen={modal} toggle={toggle} >
         <ModalHeader toggle={toggle}>Choose File to Upload</ModalHeader>
         <ModalBody>
-          <UploadFileToChain/> 
+          <UploadFileToChain/>
         </ModalBody>
         <ModalFooter>
             <Button color="secondary" onClick={toggle}>Close</Button>
