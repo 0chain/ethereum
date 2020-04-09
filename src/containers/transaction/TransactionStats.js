@@ -33,7 +33,8 @@ class TransactionStats extends Component {
     txReceipt: '',
     allocationId: zbox_config["0chain"].allocation,
     remotePath: zbox_config["0chain"].remote_path,
-    walletInfo: zbox_config["0chain"].client_json  
+    walletInfo: zbox_config["0chain"].client_json,
+    client_id: zbox_config["0chain"].client_json.client_id
   };
   
   onClick = async () => {
@@ -59,31 +60,31 @@ class TransactionStats extends Component {
     event.preventDefault();
 
     const accounts = await web3.eth.getAccounts();
-  
+    console.log(this.state.client_id)
     const ethAddress = await dts.options.address;
     this.setState({ ethAddress });
 
     try {
         // Fetching metadata from 0Chain blockchain.
         await jsClientSdk.getFileMetaDataFromPath(this.state.allocationId, 
-        this.state.remotePath, this.state.walletInfo).then((res) => {
+        this.state.remotePath, this.state.client_id).then((res) => {
           console.log(res)
-          this.setState({documentHash: res.metaData.documentHash,
-          authTicket: res.metaData.authTicket, lookupHash: res.metaData.lookupHash})
+          this.setState({documentHash: res.hash,
+          authTicket: res.merkle_root, lookupHash: res.lookup_hash})
       }, (error) => {
         console.log(error);
       })
-
-      await dts.methods.uploadMetadata(this.state.documentHash, this.state.authTicket, this.state.lookupHash).send({
-        from: accounts[0]
-        }, (error, transactionHash) => {
-          console.log(transactionHash);
-          this.setState({ transactionHash });
-      });
     }
     catch (error) {
       console.log(error);
     }
+    // Uploading metadata (proof) to Ethereum.
+    await dts.methods.uploadMetadata(this.state.documentHash, this.state.authTicket, this.state.lookupHash).send({
+      from: accounts[0]
+      }, (error, transactionHash) => {
+        console.log(transactionHash);
+        this.setState({ transactionHash });
+    });
   };
   
     render() {

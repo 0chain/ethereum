@@ -33,7 +33,7 @@ class UploadFileToChain extends Component {
           this.state.remotePath, this.state.walletInfo)
       
         this.setState({message: <Alert color="success">File successfully uploaded to 0Chain!</Alert>})
-        this.setState({progress: <Progress color="info" value={50}>Uploading finished!</Progress>})
+        this.setState({progress: <Progress color="success" value={100}>Uploading finished!</Progress>})
     } 
     catch (error) {
       console.log(error)
