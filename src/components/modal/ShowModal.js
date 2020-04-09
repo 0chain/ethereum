@@ -25,11 +25,6 @@ class UploadFileToChain extends Component {
 
   uploadMetadataToZbox = async () => {
     try {
-        console.log(this.state.file)
-        console.log(this.state.allocationId)
-        console.log(this.state.remotePath)
-        console.log(this.state.walletInfo)
-
         this.setState({message: <Alert color="info">Uploading file to 0Chain, this may take a moment.</Alert>})
 
         await jsClientSdk.uploadObject(this.state.file, this.state.allocationId, 

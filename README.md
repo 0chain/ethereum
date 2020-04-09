@@ -26,15 +26,17 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
 - Setup 0Chain configurations in the `config.json` file [here](https://github.com/0chain/ethereum/tree/master/src/config).
 - Install [truffle](https://www.npmjs.com/package/truffle) globally - `npm install -g truffle`.
 - Install [metamask](https://www.metamask.io) for your browser. (Make sure you have enough funds.)
+  - To setup metamask - follow the tutorial [here](https://medium.com/@followcoin/how-to-install-metamask-88cbdabc1d28).
   - To get some funds for your metamask wallet, make a request to a [faucet](https://faucet.metamask.io).
 
 ## Setting up zboxcli 
-- Make sure you have Go V1.12 or higher installed on your computer. 
+- Make sure you have Go V1.12 or higher installed on your computer.
+  - Install Golang [here](https://golang.org/doc/install/source).
 - Clone the repository - `git clone https://github.com/0chain/zboxcli.git`
 - In the zboxcli directory run - `make install`
 - Run the following commands after, to set up the network config:
   -  `mkdir ~/.zcn && cp network/one.yaml ~/.zcn/config.yaml`
-- Lastly, run `./zbox` to check if the setup is successful.
+- Lastly, run `./zbox`, in the project directory, to check if the setup is successful.
 
 ## Setting up 0Proxy Server
 - Clone the repo: `git clone https://github.com/0chain/0Chain_proxy_server.git && cd 0Chain_proxy_server`
@@ -53,7 +55,7 @@ If you're new to Ethereum, learn more about it [here](https://medium.com/@mattco
   - localpath: Absolute path to the file on your local system,
   - remote_path: Remote path where you want to store. It should start with `/`,
   - client_json: The generated wallet information after registering your wallet with zboxcli. This can be found in here: `~/.zcn/wallet.json`. 
-- Sample configurations are pre-filled for reference.
+- Sample configurations are pre-filled for your reference.
 - **Note**: If the configs are not entered correctly, upload to 0Chain and Ethereum will throw errors. 
 
 ## Run the App

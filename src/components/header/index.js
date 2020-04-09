@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler } from 'reactstrap';
+import {  Navbar } from 'reactstrap';
 
 import { NavLink } from 'react-router-dom';
 
@@ -49,9 +49,7 @@ class ZeroChainHeader extends Component {
               />
               {/* <span>{formatMessage(intlMsg.quote)}</span> */}
             </NavLink>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-            </Collapse>
+
           </Navbar>
         </div>
       );
